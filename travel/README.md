@@ -23,11 +23,58 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 # 项目总结
 ## css
  - 运用flex和float布局，可以实现多栏自适应布局
+ - display:flex； flex-direction: column； justify-content: center 可以实现垂直居中布局
  - margin，padding如果设为百分比，则是根据当前元素的父元素的width计算
  - css3新的单位，vm,vh，相对于屏幕的百分比
  - ‘>>>’ 深度选择器，可以在父组件里改变子组件的样式
+ - position：absolute； let：0；right：0；top:0; bottom:0; 可以使元素铺满屏幕
 
 ## js
 ### 数组循环 foreach map
 - foreach()回改变原数组，没有返回值
 - map() 不改变原来数组，返回新数组，效率比foreach高
+- 节流函数
+	``` javascript
+		if(timer){
+			clearTimeout(timer)
+		}
+		timer = setTimeout(()=>{
+			//
+		},200)
+	```
+- touchmove 事件
+	```javascript
+		e.touches[0].clientY //当前触点距离视窗的距离
+		ele.offsetTop        // 某元素距离父元素顶部距离
+		ele.clientHeight     // 某元素的高度
+	```
+
+## 插件
+### better-scroll
+ - 默认阻止点击事件
+ - 通过参数可控制
+``` javascript
+	# html 结构
+		<div class="scroll-wrap" ref="scrollWrap">
+			<ul class="content">
+				<li></li>
+			</ul>
+		</div>
+
+		let bscroll = new Bscroll(this.$refs.scrollWrap,{click:true})
+```
+
+
+### vuex
+	- mapState,mapMutations 可以批量应用vuex变量
+
+``` javascript
+	import {mapState,mapMutations} from 'vue'
+
+	computed:{
+		...mapState(['state','name'])
+	},
+	methods:{
+		...mapMutations(['handle','hand2'])
+	}
+```
