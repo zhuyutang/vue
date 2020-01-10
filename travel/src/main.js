@@ -8,7 +8,7 @@ import axios from 'axios'
 import store from './store'
 import 'styles/reset.css'
 import 'styles/border.css'
-import 'styles/iconfont.css'
+import 'styles/iconfont/iconfont.css'
 import 'swiper/dist/css/swiper.css'
 
 Vue.config.productionTip = false
