@@ -28,6 +28,9 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
  - css3新的单位，vm,vh，相对于屏幕的百分比
  - ‘>>>’ 深度选择器，可以在父组件里改变子组件的样式
  - position：absolute； let：0；right：0；top:0; bottom:0; 可以使元素铺满屏幕
+ - absolute的元素，可以通过同时设top，bottom来设置元素的高度。
+ - 多行文字垂直居中，可将父标签设为：display：table；子标签设为：display：table-cell； vertical-align：top；
+
 
 ## js
 ### 数组循环 foreach map
@@ -49,6 +52,9 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 		ele.clientHeight     // 某元素的高度
 	```
 
+## Vue
+- this.$nextTick(fn),在页面渲染后执行回调
+
 ## 插件
 ### better-scroll
  - 默认阻止点击事件
@@ -61,7 +67,11 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 			</ul>
 		</div>
 
-		let bscroll = new Bscroll(this.$refs.scrollWrap,{click:true})
+		let bscroll = new Bscroll(this.$refs.scrollWrap,{
+      click:true,
+      probeType:2,//只有手指滑动时才触发scroll事件
+      momentum:false//惯性移动是否开启
+    })
 ```
 
 

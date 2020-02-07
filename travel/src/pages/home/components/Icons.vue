@@ -2,7 +2,7 @@
 	<div class="icons">
 		<swiper :options="swiperOptions">
 			<swiper-slide v-for="(item,index) in pages" :key="index">
-				<div class="icon-item" v-for="(iconInfo,index) in item" :key="index">
+				<div class="icon-item" v-for="(iconInfo,index) in item" :key="index" @click="goShop">
 					<img class='icon-img' :src='iconInfo.imgUrl' />
 					<p class="icon-desc">{{iconInfo.desc}}</p>
 				</div>
@@ -37,7 +37,11 @@
 				})
 				return pages;
 			}
-
+		},
+		methods:{
+			goShop(){
+				this.$router.push('/shop')
+			}
 		}
 	}
 </script>
